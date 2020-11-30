@@ -2,7 +2,7 @@ using System;
 
 namespace DesktopApp.Models
 {
-    public class CBook : CAsset
+    public class Book : Asset
     {
         public string Author { get; set; }
         public DateTime Date { get; set; }

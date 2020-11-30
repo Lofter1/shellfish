@@ -2,7 +2,7 @@ using System;
 
 namespace DesktopApp.Models
 {
-    public class CVideo : CAsset
+    public class Video : Asset
     {
         public DateTime UploadDate { get; set; }
         public string Uploader { get; set; }

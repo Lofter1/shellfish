@@ -8,13 +8,13 @@ namespace DesktopApp.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<CAsset>().ToTable("Assets");
+            modelBuilder.Entity<Asset>().ToTable("Assets");
         }
         
-        public DbSet<CBlogpost> Blogposts { get; set; }
-        public DbSet<CBook> Books { get; set; }
-        public DbSet<CPodcast> Podcasts { get; set; }
-        public DbSet<CSlide> Slides { get; set; }
-        public DbSet<CVideo> Videos { get; set; }
+        public DbSet<Blogpost> Blogposts { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Podcast> Podcasts { get; set; }
+        public DbSet<Slide> Slides { get; set; }
+        public DbSet<Video> Videos { get; set; }
     }
 }

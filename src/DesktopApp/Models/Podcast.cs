@@ -2,7 +2,7 @@ using System;
 
 namespace DesktopApp.Models
 {
-    public class CPodcast : CAsset
+    public class Podcast : Asset
     {
         public string Speaker { get; set; }
         public  float Length { get; set; }
