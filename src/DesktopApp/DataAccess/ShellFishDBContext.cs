@@ -1,22 +1,16 @@
 using DesktopApp.Models;
 using Microsoft.EntityFrameworkCore;
-using SharpDX;
 
 namespace DesktopApp.DataAccess
 {
-    public class ShellFishDBContext : DbContext
+    public class ShellFishDbContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<CAsset>().ToTable("Assets");
         }
         
-        public DbSet<CAsset> Assets { get; set; }
         public DbSet<CBlogpost> Blogposts { get; set; }
         public DbSet<CBook> Books { get; set; }
         public DbSet<CPodcast> Podcasts { get; set; }
