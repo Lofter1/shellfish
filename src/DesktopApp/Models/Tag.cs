@@ -8,6 +8,11 @@ namespace DesktopApp.Models
     public class Tag
     {
         /// <summary>
+        /// Database ID
+        /// </summary>
+        public int TagId { get; set; }
+        
+        /// <summary>
         /// Name of the tag that can be searched for
         /// and is displayed.
         /// </summary>

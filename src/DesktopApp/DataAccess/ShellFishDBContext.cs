@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using DesktopApp.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -5,6 +7,13 @@ namespace DesktopApp.DataAccess
 {
     public class ShellFishDbContext : DbContext
     {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connectionString = Path.Combine("ShellFishData.db"); 
+            optionsBuilder.UseSqlite(
+                $"Data Source={connectionString}");
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

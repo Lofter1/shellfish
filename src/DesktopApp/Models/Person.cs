@@ -8,6 +8,11 @@ namespace DesktopApp.Models
     public class Person
     {
         /// <summary>
+        /// Database ID
+        /// </summary>
+        public int PersonId { get; set; }
+        
+        /// <summary>
         /// First name of the person.
         /// </summary>
         public string FirstName { get; set; }
