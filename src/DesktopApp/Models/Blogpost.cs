@@ -10,7 +10,7 @@ namespace DesktopApp.Models
         /// <summary>
         /// Author of the blog post.
         /// </summary>
-        public string Author { get; set; }
+        public Person Author { get; set; }
         
         /// <summary>
         /// Date on which the blog post was uploaded.

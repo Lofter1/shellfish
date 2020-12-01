@@ -10,7 +10,7 @@ namespace DesktopApp.Models
         /// <summary>
         /// The host of the podcast.
         /// </summary>
-        public string Speaker { get; set; } // TODO does a list of speakers make more sense?
+        public Person Speaker { get; set; }
         
         /// <summary>
         /// Play-length of the podcast.

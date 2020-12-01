@@ -15,7 +15,7 @@ namespace DesktopApp.Models
         /// <summary>
         /// Person who uploaded the video.
         /// </summary>
-        public string Uploader { get; set; }
+        public Person Uploader { get; set; }
         
         /// <summary>
         /// Length of the video.

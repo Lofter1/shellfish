@@ -13,7 +13,7 @@ namespace DesktopApp.Models
         /// <summary>
         /// Speaker who used the slide.
         /// </summary>
-        public string Speaker { get; set; }
+        public Person Speaker { get; set; }
         
         /// <summary>
         /// Filetype of the slide.

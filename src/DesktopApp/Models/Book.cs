@@ -10,7 +10,7 @@ namespace DesktopApp.Models
         /// <summary>
         /// The author of the book.
         /// </summary>
-        public string Author { get; set; }
+        public Person Author { get; set; }
         
         /// <summary>
         /// Date on which the book was published.
