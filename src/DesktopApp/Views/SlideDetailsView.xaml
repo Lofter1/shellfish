@@ -22,7 +22,7 @@
             
         </StackPanel>
         
-        <Grid Grid.Column="1" ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+        <Grid Grid.Column="1" ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
 
             <Label Grid.Column="0" Grid.Row="0" Margin="5" 
                    HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -31,7 +31,7 @@
             <TextBox Grid.Column="1" Grid.Row="0" Margin="5" Width="200"
                      HorizontalAlignment="Left" VerticalAlignment="Center"
                      Text="{Binding Asset.Title}" 
-                     IsReadOnly="True"/>
+                     IsEnabled="{Binding IsInEditMode}"/>
             
             <Label Grid.Column="0" Grid.Row="1" Margin="5"
                    HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -40,7 +40,7 @@
             <TextBox Grid.Column="1" Grid.Row="1" Margin="5" Width="200"
                      HorizontalAlignment="Left" VerticalAlignment="Center"
                      Text="{Binding Asset.Event}" 
-                     IsReadOnly="True"/>
+                     IsEnabled="{Binding IsInEditMode}"/>
             
             <Label Grid.Column="0" Grid.Row="2" Margin="5"
                    HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -55,7 +55,7 @@
             <TextBox Grid.Column="1" Grid.Row="3" Margin="5" Width="200"
                      HorizontalAlignment="Left" VerticalAlignment="Center"
                      Text="{Binding Asset.FileType}" 
-                     IsReadOnly="True"/>
+                     IsEnabled="{Binding IsInEditMode}"/>
             
             <Label Grid.Column="0" Grid.Row="4" Margin="5"
                    HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -64,12 +64,25 @@
             <TextBox Grid.Column="1" Grid.Row="4" Margin="5" Width="200"
                      HorizontalAlignment="Left" VerticalAlignment="Center"
                      Text="{Binding Asset.Url}" 
-                     IsReadOnly="True"/>
+                     IsEnabled="{Binding IsInEditMode}"/>
             
             <Label Grid.Column="0" Grid.Row="5" Margin="5"
                    HorizontalAlignment="Left" VerticalAlignment="Center">
                 Tags
             </Label>
+            
+            <Button Grid.Row="6" Grid.Column="0" Margin="5"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Command="{Binding StartEditModeCommand}"
+                    IsVisible="{Binding !IsInEditMode}">
+                Edit
+            </Button>
+            <Button Grid.Row="6" Grid.Column="0" Margin="5"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Command="{Binding CancelEditingCommand}"
+                    IsVisible="{Binding IsInEditMode}">
+                Cancel
+            </Button>
         </Grid>
     </Grid>
     
