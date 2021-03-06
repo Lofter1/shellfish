@@ -1,6 +1,6 @@
 ﻿namespace DesktopApp.ViewModels
 {
-    public class SlideDetailsViewModel
+    public class SlideDetailsViewModel : DetailsViewModelBase
     {
         
     }

@@ -1,6 +1,6 @@
 ﻿namespace DesktopApp.ViewModels
 {
-    public class BlogpostDetailsViewModel
+    public class BlogpostDetailsViewModel : DetailsViewModelBase
     {
         
     }

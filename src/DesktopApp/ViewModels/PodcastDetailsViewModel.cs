@@ -1,6 +1,6 @@
 ﻿namespace DesktopApp.ViewModels
 {
-    public class PodcastDetailsViewModel
+    public class PodcastDetailsViewModel : DetailsViewModelBase
     {
         
     }
