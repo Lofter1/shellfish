@@ -1,6 +1,8 @@
-﻿namespace DesktopApp.ViewModels
+﻿using DesktopApp.Models;
+
+namespace DesktopApp.ViewModels
 {
-    public class BookDetailsViewModel : DetailsViewModelBase
+    public class BookDetailsViewModel : DetailsViewModelBase<Book>
     {
         
     }

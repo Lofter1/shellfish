@@ -2,8 +2,8 @@ using DesktopApp.Models;
 
 namespace DesktopApp.ViewModels
 {
-    public class DetailsViewModelBase : ViewModelBase
+    public class DetailsViewModelBase<T> : ViewModelBase where T : Asset
     {
-        public Asset Asset { get; set; }
+        public T Asset { get; set; }
     }
 }
