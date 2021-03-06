@@ -74,13 +74,15 @@
             <Button Grid.Row="6" Grid.Column="0" Margin="5"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Command="{Binding StartEditModeCommand}"
-                    IsVisible="{Binding !IsInEditMode}">
+                    IsVisible="{Binding !IsInEditMode}"
+                    Width="50" Height="25">
                 Edit
             </Button>
             <Button Grid.Row="6" Grid.Column="0" Margin="5"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
                     Command="{Binding CancelEditingCommand}"
-                    IsVisible="{Binding IsInEditMode}">
+                    IsVisible="{Binding IsInEditMode}"
+                    Width="50" Height="25">
                 Cancel
             </Button>
         </Grid>
