@@ -22,16 +22,16 @@ namespace DesktopApp.ViewModels
                 {
                     FirstName = "Jon", 
                     LastName = "Erickson", 
-                    Website = new Uri("http://www.someonefamous.com")
+                    Website = new Uri("http://www.someonefamous.com/")
                 },
                 FileType = "pdf",
-                Url = new Uri("/path/to/file.pdf"),
+                //Url = new Uri(""),
                 Tags = new List<Tag>
                 {
                     new() {Name = "Hacking"}, 
                     new() {Name = "Someone famous wrote this"}
                 },
-                Cover = new Uri("/path/to/file.pdf"),
+                Cover = new Uri("ftp://path/to/file.pdf"),
                 PublishDate = new DateTime(2007, 10, 1)
             };
 
