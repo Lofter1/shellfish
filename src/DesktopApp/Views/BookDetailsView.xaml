@@ -47,6 +47,7 @@
                 Author
             </Label>
             
+            
             <Label Grid.Column="0" Grid.Row="3" Margin="5"
                    HorizontalAlignment="Left" VerticalAlignment="Center">
                 Filetype
