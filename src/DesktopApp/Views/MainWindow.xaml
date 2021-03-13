@@ -18,6 +18,12 @@
             <Setter Property="Width" Value="60" />
             <Setter Property="Height" Value="60" />
         </Style>
+        
+        <Style Selector="Button.AssetTile">
+            <Setter Property="FontSize" Value="38" />
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Height" Value="60" />
+        </Style>
 
         <Style Selector="StackPanel.Collection">
             <Setter Property="HorizontalAlignment" Value="Left" />
@@ -29,34 +35,43 @@
             <Setter Property="Padding" Value="0, 10, 0, 0" />
             <Setter Property="Width" Value="200" />
         </Style>
+        
+        <Style Selector="ListBox.Assets">
+            <Setter Property="Margin" Value="0, 0, 15,0" />
+        </Style>
     </Window.Styles>
 
     <StackPanel>
-        <TabControl>
+        <TabControl Name="MainTabControl">
             <TabItem Header="Books">
-                <StackPanel Classes="Collection">
-                    <Button Classes="AddAsset">+</Button>
-                </StackPanel>
+                <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
+                    <Button Grid.Column="0" Classes="AddAsset" Click="AddAsset_OnClick">+</Button>
+                    <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" />
+                </Grid>
             </TabItem>
             <TabItem Header="Podcasts">
-                <StackPanel Classes="Collection">
-                    <Button Classes="AddAsset">+</Button>
-                </StackPanel>
+                <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
+                    <Button Classes="AddAsset" Click="AddAsset_OnClick">+</Button>
+                    <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" />
+                </Grid>
             </TabItem>
             <TabItem Header="Slides">
-                <StackPanel Classes="Collection">
-                    <Button Classes="AddAsset">+</Button>
-                </StackPanel>
+                <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
+                    <Button Classes="AddAsset" Click="AddAsset_OnClick">+</Button>
+                    <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" />
+                </Grid>
             </TabItem>
             <TabItem Header="Videos">
-                <StackPanel Classes="Collection">
-                    <Button Classes="AddAsset">+</Button>
-                </StackPanel>
+                <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
+                    <Button Classes="AddAsset" Click="AddAsset_OnClick">+</Button>
+                    <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" />
+                </Grid>
             </TabItem>
             <TabItem Header="Blogposts">
-                <StackPanel Classes="Collection">
-                    <Button Classes="AddAsset">+</Button>
-                </StackPanel>
+                <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
+                    <Button Classes="AddAsset" Click="AddAsset_OnClick">+</Button>
+                    <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" />
+                </Grid>
             </TabItem>
         </TabControl>
     </StackPanel>

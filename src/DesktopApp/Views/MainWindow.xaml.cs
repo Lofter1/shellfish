@@ -1,5 +1,8 @@
+using System.Security.Principal;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
+using Avalonia.LogicalTree;
 using Avalonia.Markup.Xaml;
 
 namespace DesktopApp.Views
@@ -14,6 +17,11 @@ namespace DesktopApp.Views
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
+        }
+
+        private void AddAsset_OnClick(object? sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
