@@ -1,6 +1,8 @@
-﻿namespace DesktopApp.ViewModels
+﻿using DesktopApp.Models;
+
+namespace DesktopApp.ViewModels
 {
-    public class VideoDetailsViewModel
+    public class VideoDetailsViewModel : DetailsViewModelBase<Video>
     {
         
     }
