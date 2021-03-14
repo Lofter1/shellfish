@@ -9,7 +9,9 @@ namespace DesktopApp.DataAccess
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = Path.Combine("ShellFishData.db"); 
+            var connectionString = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.Personal), 
+                "ShellFishData.db");
             optionsBuilder.UseSqlite(
                 $"Data Source={connectionString}");
         }
@@ -25,5 +27,6 @@ namespace DesktopApp.DataAccess
         public DbSet<Podcast> Podcasts { get; set; }
         public DbSet<Slide> Slides { get; set; }
         public DbSet<Video> Videos { get; set; }
+        public DbSet<Person> Persons { get; set; }
     }
 }
