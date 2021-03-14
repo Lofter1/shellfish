@@ -3,14 +3,16 @@ using System;
 using DesktopApp.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DesktopApp.Migrations
 {
     [DbContext(typeof(ShellFishDbContext))]
-    partial class ShellFishDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210314122057_AddPerson")]
+    partial class AddPerson
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
