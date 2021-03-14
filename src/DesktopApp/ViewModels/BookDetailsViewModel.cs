@@ -4,13 +4,13 @@ using System.Reactive;
 using DesktopApp.Models;
 using ReactiveUI;
 
-using DesktopApp.Models;
-
 namespace DesktopApp.ViewModels
 {
     public class BookDetailsViewModel : DetailsViewModelBase<Book>
     {
-        private bool isInEditMode;
+        private bool _isInEditMode;
+        private readonly ReactiveCommand<Unit, bool> _startEditModeCommand;
+        private readonly ReactiveCommand<Unit, Unit> _cancelEditingCommand;
 
         public BookDetailsViewModel()
         {
@@ -35,23 +35,24 @@ namespace DesktopApp.ViewModels
                 PublishDate = new DateTime(2007, 10, 1)
             };
 
-            StartEditModeCommand = ReactiveCommand.Create(() => IsInEditMode = true);
-            CancelEditingCommand = ReactiveCommand.Create(CancelEditing);
+            _startEditModeCommand = ReactiveCommand.Create(() => IsInEditMode = true);
+            _cancelEditingCommand = ReactiveCommand.Create(CancelEditing);
         }
 
-        public ReactiveCommand<Unit, bool> StartEditModeCommand { get; }
-        public ReactiveCommand<Unit, Unit> CancelEditingCommand { get; }
+        public ReactiveCommand<Unit, bool> StartEditModeCommand => _startEditModeCommand;
+
+        public ReactiveCommand<Unit, Unit> CancelEditingCommand => _cancelEditingCommand;
 
         public bool IsInEditMode
         {
-            get => isInEditMode; 
-            private set => this.RaiseAndSetIfChanged(ref isInEditMode, value);
+            get => _isInEditMode; 
+            private set => this.RaiseAndSetIfChanged(ref _isInEditMode, value);
         }
 
         private void CancelEditing()
         {
             IsInEditMode = false;
-            throw new NotImplementedException();
+            Asset = OriginalAsset;
         }
     }
 }
