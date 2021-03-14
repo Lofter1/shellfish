@@ -8,7 +8,9 @@ namespace DesktopApp.ViewModels
 {
     public class PodcastDetailsViewModel : DetailsViewModelBase<Podcast>
     {
-        private bool isInEditMode;
+        private bool _isInEditMode;
+        private readonly ReactiveCommand<Unit, bool> _startEditModeCommand;
+        private readonly ReactiveCommand<Unit, Unit> _cancelEditingCommand;
 
         public PodcastDetailsViewModel()
         {
@@ -32,23 +34,24 @@ namespace DesktopApp.ViewModels
                 }
             };
 
-            StartEditModeCommand = ReactiveCommand.Create(() => IsInEditMode = true);
-            CancelEditingCommand = ReactiveCommand.Create(CancelEditing);
+            _startEditModeCommand = ReactiveCommand.Create(() => IsInEditMode = true);
+            _cancelEditingCommand = ReactiveCommand.Create(CancelEditing);
         }
 
-        public ReactiveCommand<Unit, bool> StartEditModeCommand { get; }
-        public ReactiveCommand<Unit, Unit> CancelEditingCommand { get; }
+        public ReactiveCommand<Unit, bool> StartEditModeCommand => _startEditModeCommand;
+
+        public ReactiveCommand<Unit, Unit> CancelEditingCommand => _cancelEditingCommand;
 
         public bool IsInEditMode
         {
-            get => isInEditMode; 
-            private set => this.RaiseAndSetIfChanged(ref isInEditMode, value);
+            get => _isInEditMode; 
+            private set => this.RaiseAndSetIfChanged(ref _isInEditMode, value);
         }
 
         private void CancelEditing()
         {
             IsInEditMode = false;
-            throw new NotImplementedException();
+            Asset = OriginalAsset;
         }
     }
 }
