@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using DesktopApp.Models;
 
 namespace DesktopApp.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Hello World!";
+        public List<string> Assets { get; set; }
+
+        public MainWindowViewModel()
+        {
+            Assets = new List<string>();
+        }
     }
 }
