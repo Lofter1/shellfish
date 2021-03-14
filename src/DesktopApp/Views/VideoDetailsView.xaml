@@ -12,4 +12,38 @@
         <vm:SlideDetailsViewModel/>
     </Design.DataContext>
     
+    <Window.Styles>
+        <Style Selector="Label.DataType">
+            <Setter Property="Margin" Value="10, 15, 10, 0" />
+        </Style>    
+        <Style Selector="TextBox.Info">
+            <Setter Property="Margin" Value="10, 15, 10, 0" />
+        </Style>    
+    </Window.Styles>
+    
+    <StackPanel>
+        <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto">
+            <Label Classes="DataType" Grid.Column="0" Grid.Row="0">Titel</Label>
+            <TextBox Classes="Info" Grid.Column="1" Grid.Row="0" />
+            
+            <Label Classes="DataType" Grid.Column="0" Grid.Row="1">Tags</Label>
+            <TextBox Classes="Info" Grid.Column="1" Grid.Row="1" />
+            
+            <Label Classes="DataType" Grid.Column="0" Grid.Row="2">Upload date</Label>
+            <TextBox Classes="Info" Grid.Column="1" Grid.Row="2" />
+            
+            <Label Classes="DataType" Grid.Column="0" Grid.Row="3">Uploader</Label>
+            <TextBox Classes="Info" Grid.Column="1" Grid.Row="3" />
+            
+            <Label Classes="DataType" Grid.Column="0" Grid.Row="4">Length</Label>
+            <TextBox Classes="Info" Grid.Column="1" Grid.Row="4" />
+            
+            <Label Classes="DataType" Grid.Column="0" Grid.Row="5">URL/Path</Label>
+            <TextBox Classes="Info" Grid.Column="1" Grid.Row="5" />
+        </Grid>
+        <Grid ColumnDefinitions="Auto, Auto" VerticalAlignment="Center">
+            <Button Grid.Column="0" Margin="5">Edit</Button>
+            <Button Grid.Column="1" Margin="5">Cancel</Button>
+        </Grid>
+    </StackPanel>
 </Window>
