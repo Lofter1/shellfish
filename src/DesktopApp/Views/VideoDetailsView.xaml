@@ -9,7 +9,7 @@
         Title="Video Details">
 
     <Design.DataContext>
-        <vm:SlideDetailsViewModel/>
+        <vm:VideoDetailsViewModel/>
     </Design.DataContext>
     
     <Window.Styles>
@@ -22,28 +22,63 @@
     </Window.Styles>
     
     <StackPanel>
-        <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto">
-            <Label Classes="DataType" Grid.Column="0" Grid.Row="0">Titel</Label>
-            <TextBox Classes="Info" Grid.Column="1" Grid.Row="0" />
+        <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto,*">
+            <Label Classes="DataType" Grid.Column="0" Grid.Row="0" Margin="5"
+                   HorizontalAlignment="Left" VerticalAlignment="Center">
+                Title
+            </Label>
+            <TextBox Classes="Info" Grid.Column="1" Grid.Row="0" Margin="5" Width="200"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                     Text="{Binding Asset.Title}" 
+                     IsEnabled="{Binding IsInEditMode}"/>
             
-            <Label Classes="DataType" Grid.Column="0" Grid.Row="1">Tags</Label>
-            <TextBox Classes="Info" Grid.Column="1" Grid.Row="1" />
+            <!-- <Label Classes="DataType" Grid.Column="0" Grid.Row="1">Tags</Label> -->
+            <!-- <TextBox Classes="Info" Grid.Column="1" Grid.Row="1" /> -->
             
-            <Label Classes="DataType" Grid.Column="0" Grid.Row="2">Upload date</Label>
-            <TextBox Classes="Info" Grid.Column="1" Grid.Row="2" />
+            <Label Classes="DataType" Grid.Column="0" Grid.Row="2" Margin="5"
+                   HorizontalAlignment="Left" VerticalAlignment="Center">
+                Upload date
+            </Label>
+            <TextBox Classes="Info" Grid.Column="1" Grid.Row="2" Margin="5" Width="200"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                     Text="{Binding Asset.UploadDate}" 
+                     IsEnabled="{Binding IsInEditMode}"/>
             
-            <Label Classes="DataType" Grid.Column="0" Grid.Row="3">Uploader</Label>
-            <TextBox Classes="Info" Grid.Column="1" Grid.Row="3" />
+            <!-- <Label Classes="DataType" Grid.Column="0" Grid.Row="3">Uploader</Label> -->
+            <!-- <TextBox Classes="Info" Grid.Column="1" Grid.Row="3" /> -->
             
-            <Label Classes="DataType" Grid.Column="0" Grid.Row="4">Length</Label>
-            <TextBox Classes="Info" Grid.Column="1" Grid.Row="4" />
+            <Label Classes="DataType" Grid.Column="0" Grid.Row="4" Margin="5"
+                   HorizontalAlignment="Left" VerticalAlignment="Center">
+                Length
+            </Label>
+            <TextBox Classes="Info" Grid.Column="1" Grid.Row="4" Margin="5" Width="200"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                     Text="{Binding Asset.Length}" 
+                     IsEnabled="{Binding IsInEditMode}"/>
             
-            <Label Classes="DataType" Grid.Column="0" Grid.Row="5">URL/Path</Label>
-            <TextBox Classes="Info" Grid.Column="1" Grid.Row="5" />
-        </Grid>
-        <Grid ColumnDefinitions="Auto, Auto" VerticalAlignment="Center">
-            <Button Grid.Column="0" Margin="5">Edit</Button>
-            <Button Grid.Column="1" Margin="5">Cancel</Button>
+            <Label Classes="DataType" Grid.Column="0" Grid.Row="5" Margin="5"
+                   HorizontalAlignment="Left" VerticalAlignment="Center">
+                URL/Path
+            </Label>
+            <TextBox Classes="Info" Grid.Column="1" Grid.Row="5" Margin="5" Width="200"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                     Text="{Binding Asset.Url}" 
+                     IsEnabled="{Binding IsInEditMode}"/>
+            
+            <Button Grid.Row="6" Grid.Column="0" Margin="5"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Command="{Binding StartEditModeCommand}"
+                    IsVisible="{Binding !IsInEditMode}"
+                    Width="50" Height="25">
+                Edit
+            </Button>
+            <Button Grid.Row="6" Grid.Column="0" Margin="5"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Command="{Binding SaveCommand}"
+                    IsVisible="{Binding IsInEditMode}"
+                    Width="50" Height="25">
+                Save
+            </Button>
         </Grid>
     </StackPanel>
 </Window>

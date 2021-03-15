@@ -45,32 +45,66 @@
         <TabControl Name="MainTabControl">
             <TabItem Header="Books">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-                    <Button Grid.Column="0" Classes="AddAsset" Click="AddAsset_OnClick">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" />
+                    <Button Grid.Column="0" Classes="AddAsset" Command="{Binding AddBookCommand}" VerticalAlignment="Top">+</Button>
+                    <ListBox Grid.Column="1" Items="{Binding Books}" Classes="Assets">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
             </TabItem>
+  
             <TabItem Header="Podcasts">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-                    <Button Classes="AddAsset" Click="AddAsset_OnClick">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" />
+                    <Button Classes="AddAsset" Command="{Binding AddPodcastCommand}" VerticalAlignment="Top">+</Button>
+                    <ListBox Grid.Column="1" Items="{Binding Podcasts}" Classes="Assets">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
             </TabItem>
+            
             <TabItem Header="Slides">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-                    <Button Classes="AddAsset" Click="AddAsset_OnClick">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" />
+                    <Button Classes="AddAsset" Command="{Binding AddSlideCommand}" VerticalAlignment="Top">+</Button>
+                    <ListBox Grid.Column="1" Items="{Binding Slides}" Classes="Assets">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
             </TabItem>
+            
             <TabItem Header="Videos">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-                    <Button Classes="AddAsset" Click="AddAsset_OnClick">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" />
+                    <Button Classes="AddAsset" Command="{Binding AddVideoCommand}" VerticalAlignment="Top">+</Button>
+                    <ListBox Grid.Column="1" Items="{Binding Videos}" Classes="Assets">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
             </TabItem>
+            
             <TabItem Header="Blogposts">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-                    <Button Classes="AddAsset" Click="AddAsset_OnClick">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" />
+                    <Button Classes="AddAsset" Command="{Binding AddBlogpostCommand}" VerticalAlignment="Top">+</Button>
+                    <ListBox Grid.Column="1" Items="{Binding Blogposts}" Classes="Assets">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
             </TabItem>
         </TabControl>
