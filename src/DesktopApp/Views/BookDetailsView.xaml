@@ -22,7 +22,7 @@
             
         </StackPanel>
         
-        <Grid Grid.Column="1" ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+        <Grid Grid.Column="1" ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,*">
 
             <Label Grid.Column="0" Grid.Row="0" Margin="5" 
                    HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -42,14 +42,14 @@
                      Text="{Binding Asset.Edition}" 
                      IsEnabled="{Binding IsInEditMode}"/>
             
-            <Label Grid.Column="0" Grid.Row="2" Margin="5"
-                   HorizontalAlignment="Left" VerticalAlignment="Center">
-                Author
-            </Label>
-            <TextBox Grid.Column="1" Grid.Row="2" Margin="5" Width="200"
-                     HorizontalAlignment="Left" VerticalAlignment="Center"
-                     Text="{Binding Asset.Author.LastName}" 
-                     IsEnabled="{Binding IsInEditMode}"/>
+            <!-- <Label Grid.Column="0" Grid.Row="2" Margin="5" -->
+            <!--        HorizontalAlignment="Left" VerticalAlignment="Center"> -->
+            <!--     Author -->
+            <!-- </Label> -->
+            <!-- <TextBox Grid.Column="1" Grid.Row="2" Margin="5" Width="200" -->
+            <!--          HorizontalAlignment="Left" VerticalAlignment="Center" -->
+            <!--          Text="{Binding Asset.Author.LastName}"  -->
+            <!--          IsEnabled="{Binding IsInEditMode}"/> -->
 
             <Label Grid.Column="0" Grid.Row="3" Margin="5"
                    HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -78,10 +78,10 @@
                      Text="{Binding Asset.Url}" 
                      IsEnabled="{Binding IsInEditMode}"/>
             
-            <Label Grid.Column="0" Grid.Row="6" Margin="5"
-                   HorizontalAlignment="Left" VerticalAlignment="Center">
-                Tags
-            </Label>
+            <!-- <Label Grid.Column="0" Grid.Row="6" Margin="5" -->
+            <!--        HorizontalAlignment="Left" VerticalAlignment="Center"> -->
+            <!--     Tags -->
+            <!-- </Label> -->
             
             <Button Grid.Row="7" Grid.Column="0" Margin="5"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -92,11 +92,18 @@
             </Button>
             <Button Grid.Row="7" Grid.Column="0" Margin="5"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Command="{Binding CancelEditingCommand}"
+                    Command="{Binding SaveCommand}"
                     IsVisible="{Binding IsInEditMode}"
                     Width="50" Height="25">
-                Cancel
+                Save
             </Button>
+            <!-- <Button Grid.Row="7" Grid.Column="0" Margin="5" -->
+            <!--         HorizontalAlignment="Center" VerticalAlignment="Center" -->
+            <!--         Command="{Binding CancelEditingCommand}" -->
+            <!--         IsVisible="{Binding IsInEditMode}" -->
+            <!--         Width="50" Height="25"> -->
+            <!--     Cancel -->
+            <!-- </Button> -->
         </Grid>
     </Grid>
     
