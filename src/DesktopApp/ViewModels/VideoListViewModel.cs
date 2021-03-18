@@ -20,8 +20,6 @@ namespace DesktopApp.ViewModels
             var videoEditDataContext = new VideoDetailsViewModel {Asset = newVideo, IsInEditMode = true};
             var videoEditWindow = new VideoDetailsView {DataContext = videoEditDataContext};
 
-            videoEditDataContext.ItemSavedEvent += (sender, video) => Assets.Add(video);
-            
             videoEditWindow.Show();
         }
     }

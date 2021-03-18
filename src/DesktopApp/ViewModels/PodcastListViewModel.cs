@@ -20,8 +20,6 @@ namespace DesktopApp.ViewModels
             var podcastEditDataContext = new PodcastDetailsViewModel {Asset = newPodcast, IsInEditMode = true};
             var podcastEditWindow = new PodcastDetailsView {DataContext = podcastEditDataContext};
 
-            podcastEditDataContext.ItemSavedEvent += (sender, podcast) => Assets.Add(podcast);
-            
             podcastEditWindow.Show();
         }
     }
