@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive;
 using DesktopApp.DataAccess;
@@ -135,5 +136,12 @@ namespace DesktopApp.ViewModels
 
             return videosFromDatabase;
         }
+
+        
+        private int SelectedBlogPost { set => Process.Start(Blogposts[value].Url.ToString()); }
+        private int SelectedBook { set => Process.Start(Books[value].Url.ToString()); } 
+        private int SelectedPodcast { set => Process.Start(Podcasts[value].Url.ToString()); } 
+        private int SelectedSlide { set => Process.Start(Slides[value].Url.ToString()); } 
+        private int SelectedVideo { set => Process.Start(Videos[value].Url.ToString()); } 
     }
 }

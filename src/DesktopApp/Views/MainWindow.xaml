@@ -46,7 +46,7 @@
             <TabItem Header="Books">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
                     <Button Grid.Column="0" Classes="AddAsset" Command="{Binding AddBookCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Books}" Classes="Assets">
+                    <ListBox Grid.Column="1" SelectedIndex="{Binding SelectedBook}" Items="{Binding Books}" Classes="Assets">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Title}"/>
@@ -59,7 +59,7 @@
             <TabItem Header="Podcasts">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
                     <Button Classes="AddAsset" Command="{Binding AddPodcastCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Podcasts}" Classes="Assets">
+                    <ListBox Grid.Column="1" SelectedIndex="{Binding SelectedPodcast}" Items="{Binding Podcasts}" Classes="Assets">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Title}"/>
@@ -72,7 +72,7 @@
             <TabItem Header="Slides">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
                     <Button Classes="AddAsset" Command="{Binding AddSlideCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Slides}" Classes="Assets">
+                    <ListBox Grid.Column="1" SelectedIndex="{Binding SelectedSlide}" Items="{Binding Slides}" Classes="Assets">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Title}"/>
@@ -85,7 +85,7 @@
             <TabItem Header="Videos">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
                     <Button Classes="AddAsset" Command="{Binding AddVideoCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Videos}" Classes="Assets">
+                    <ListBox Grid.Column="1" SelectedIndex="{Binding SelectedVideo}" Items="{Binding Videos}" Classes="Assets">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Title}"/>
@@ -98,7 +98,7 @@
             <TabItem Header="Blogposts">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
                     <Button Classes="AddAsset" Command="{Binding AddBlogpostCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Blogposts}" Classes="Assets">
+                    <ListBox Grid.Column="1" SelectedIndex="{Binding SelectedBlogPost}" Items="{Binding Blogposts}" Classes="Assets">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Title}"/>
