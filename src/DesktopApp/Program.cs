@@ -25,6 +25,9 @@ namespace DesktopApp
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .LogToTrace()
-                .UseReactiveUI();
+                .UseReactiveUI()
+                .With(new AvaloniaNativePlatformOptions { UseGpu = false })
+                .With(new MacOSPlatformOptions { ShowInDock = false })
+                .With(new Win32PlatformOptions { UseDeferredRendering = false });
     }
 }
