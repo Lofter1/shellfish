@@ -1,4 +1,4 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
+<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:DesktopApp.ViewModels;assembly=DesktopApp"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -84,6 +84,12 @@
                     IsVisible="{Binding IsInEditMode}"
                     Width="50" Height="25">
                 Save
+            </Button>
+            
+            <Button Grid.Row="7" Grid.Column="1" 
+                    Command="{Binding OpenAssetCommand}"
+                    Width="50" Height="25">
+                Open
             </Button>
         </Grid>
     </Grid>
