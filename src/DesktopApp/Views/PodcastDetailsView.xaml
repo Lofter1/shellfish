@@ -104,6 +104,9 @@
             <!--         Width="50" Height="25"> -->
             <!--     Cancel -->
             <!-- </Button> -->
+            <Button Grid.Row="7" Grid.Column="1" Command="{Binding OpenAssetCommand}">
+                Open
+            </Button>
         </Grid>
     </Grid>
 </Window>
