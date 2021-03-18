@@ -17,83 +17,19 @@ namespace DesktopApp.ViewModels
             GetDataFromDatabase();
         }
         
-        public ObservableCollection<Book> Books { get; set; }
-        public ObservableCollection<Blogpost> Blogposts { get; set; }
-        public ObservableCollection<Podcast> Podcasts { get; set; }
-        public ObservableCollection<Slide> Slides { get; set; }
-        public ObservableCollection<Video> Videos { get; set; }
-        
-        public ReactiveCommand<Unit, Unit> AddBookCommand => ReactiveCommand.Create(AddBook);
-        public ReactiveCommand<Unit, Unit> AddBlogpostCommand => ReactiveCommand.Create(AddBlogpost);
-        public ReactiveCommand<Unit, Unit> AddPodcastCommand => ReactiveCommand.Create(AddPodcast);
-        public ReactiveCommand<Unit, Unit> AddSlideCommand => ReactiveCommand.Create(AddSlide);
-        public ReactiveCommand<Unit, Unit> AddVideoCommand => ReactiveCommand.Create(AddVideo);
-        
-        
-        
-        private void AddBook()
-        {
-            var newBook = new Book();
-
-            var bookEditDataContext = new BookDetailsViewModel {Asset = newBook, IsInEditMode = true};
-            var bookEditWindow = new BookDetailsView {DataContext = bookEditDataContext};
-         
-            bookEditDataContext.ItemSavedEvent += (sender, book) => Books.Add(book);
-
-            bookEditWindow.Show();
-        }
-        private void AddBlogpost()
-        {
-            var newBlogpost = new Blogpost();
-
-            var blogpostEditDataContext = new BlogpostDetailsViewModel {Asset = newBlogpost, IsInEditMode = true};
-            var blogpostEditWindow = new BlogpostDetailsView {DataContext = blogpostEditDataContext};
-
-            blogpostEditDataContext.ItemSavedEvent += (sender, blogpost) => Blogposts.Add(blogpost);
-            
-            blogpostEditWindow.Show();
-        }
-        private void AddPodcast()
-        {
-            var newPodcast = new Podcast();
-
-            var podcastEditDataContext = new PodcastDetailsViewModel {Asset = newPodcast, IsInEditMode = true};
-            var podcastEditWindow = new PodcastDetailsView {DataContext = podcastEditDataContext};
-
-            podcastEditDataContext.ItemSavedEvent += (sender, podcast) => Podcasts.Add(podcast);
-            
-            podcastEditWindow.Show();
-        }
-        private void AddSlide()
-        {
-            var newSlide = new Slide();
-            
-            var slideEditDataContext = new SlideDetailsViewModel {Asset = newSlide, IsInEditMode = true};
-            var slideEditWindow = new SlideDetailsView {DataContext = slideEditDataContext};
-
-            slideEditDataContext.ItemSavedEvent += (sender, slide) => Slides.Add(slide);
-            
-            slideEditWindow.Show();
-        }
-        private void AddVideo()
-        {
-            var newVideo = new Video();
-            
-            var videoEditDataContext = new VideoDetailsViewModel {Asset = newVideo, IsInEditMode = true};
-            var videoEditWindow = new VideoDetailsView {DataContext = videoEditDataContext};
-
-            videoEditDataContext.ItemSavedEvent += (sender, video) => Videos.Add(video);
-            
-            videoEditWindow.Show();
-        }
+        public BlogpostListViewModel BlogpostListViewModel { get; set; } = new BlogpostListViewModel();
+        public BookListViewModel BookListViewModel { get; set; } = new BookListViewModel();
+        public SlideListViewModel SlideListViewModel { get; set; } = new SlideListViewModel();
+        public VideoListViewModel VideoListViewModel { get; set; } = new VideoListViewModel();
+        public PodcastListViewModel PodcastListViewModel { get; set; } = new PodcastListViewModel();
 
         private void GetDataFromDatabase()
         {
-            Books = GetBooksFromDatabase();
-            Blogposts = GetBlogpostsFromDatabase();
-            Podcasts = GetPodcastFromDatabase();
-            Slides = GetSlidesFromDatabase();
-            Videos = GetVideosFromDatabase();
+            BookListViewModel.Assets = GetBooksFromDatabase();
+            BlogpostListViewModel.Assets = GetBlogpostsFromDatabase();
+            PodcastListViewModel.Assets = GetPodcastFromDatabase();
+            SlideListViewModel.Assets = GetSlidesFromDatabase();
+            VideoListViewModel.Assets = GetVideosFromDatabase();
         }
 
         private ObservableCollection<Book> GetBooksFromDatabase()
