@@ -59,13 +59,14 @@
             <TabItem Header="Podcasts">
                 <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
                     <Button Classes="AddAsset" Command="{Binding AddPodcastCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Podcasts}" Classes="Assets">
+                    <ListBox Grid.Column="1" Items="{Binding Podcasts}" Classes="Assets" SelectedItem="{Binding SelectedPodcast}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Title}"/>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
+                    <Button Command="{Binding OpenPodcastCommand}">Open</Button>
                 </Grid>
             </TabItem>
             

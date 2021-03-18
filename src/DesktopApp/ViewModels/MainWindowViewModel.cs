@@ -28,7 +28,20 @@ namespace DesktopApp.ViewModels
         public ReactiveCommand<Unit, Unit> AddSlideCommand => ReactiveCommand.Create(AddSlide);
         public ReactiveCommand<Unit, Unit> AddVideoCommand => ReactiveCommand.Create(AddVideo);
         
+        public ReactiveCommand<Unit, Unit> OpenPodcastCommand => ReactiveCommand.Create(OpenPodcast);
+
+        public Podcast SelectedPodcast
+        {
+            get; set;
+        }
         
+        private void OpenPodcast()
+        {
+            var podcastEditDataContext = new PodcastDetailsViewModel {Asset = SelectedPodcast, IsInEditMode = false};
+            var podcastEditWindow = new PodcastDetailsView {DataContext = podcastEditDataContext};
+
+            podcastEditWindow.Show();
+        }
         
         private void AddBook()
         {
