@@ -11,6 +11,8 @@
                     VerticalAlignment="Center" HorizontalAlignment="Center">Add Item</Button>
             <Button Command="{Binding OpenAssetDetailsCommand}" 
                     VerticalAlignment="Center" HorizontalAlignment="Center">Open details for selected Item</Button>
+            <Button Command="{Binding DeleteAssetCommand }" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center">Delete selected Item</Button>
         </StackPanel>
 
         <ListBox Grid.Row="1" Items="{Binding Assets}" 
