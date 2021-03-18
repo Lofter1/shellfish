@@ -5,11 +5,13 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DesktopApp.Views.ListView">
 
-    <Grid RowDefinitions="Auto, Auto">
+    <Grid RowDefinitions="Auto, Auto, Auto">
         <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="5" Spacing="5">
             <Button Command="{Binding AddAssetCommand}" 
                     VerticalAlignment="Center" HorizontalAlignment="Center">Add Item</Button>
             <Button Command="{Binding OpenAssetDetailsCommand}" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center">Open details for selected Item</Button>
+            <Button Command="{Binding OpenAssetCommand}" 
                     VerticalAlignment="Center" HorizontalAlignment="Center">Open details for selected Item</Button>
         </StackPanel>
 
