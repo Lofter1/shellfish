@@ -5,10 +5,16 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DesktopApp.Views.ListView">
 
-    <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-        <Button Classes="AddAsset" Command="{Binding AddAssetCommand}" VerticalAlignment="Top">Add Item</Button>
-        <Button Classes="AddAsset" Command="{Binding OpenAssetCommand}" VerticalAlignment="Top">Open details for selected Item</Button>
-        <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" SelectedItem="{Binding SelectedAsset}">
+    <Grid RowDefinitions="Auto, Auto">
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="5" Spacing="5">
+            <Button Command="{Binding AddAssetCommand}" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center">Add Item</Button>
+            <Button Command="{Binding OpenAssetDetailsCommand}" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center">Open details for selected Item</Button>
+        </StackPanel>
+
+        <ListBox Grid.Row="1" Items="{Binding Assets}" 
+                 SelectedItem="{Binding SelectedAsset}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Title}"/>
