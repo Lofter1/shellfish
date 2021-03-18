@@ -52,7 +52,15 @@ namespace DesktopApp.ViewModels
         
         private void OpenAsset()
         {
-            Process.Start(Asset.Url.ToString());
+            switch (Environment.OSVersion.Platform)
+            {
+                case PlatformID.Win32NT:
+                    Process.Start(Asset.Url.ToString());
+                    break;
+                case PlatformID.Unix:
+                    Process.Start("xdg-open", Asset.Url.ToString());
+                    break;
+            }
         }
     }
 }

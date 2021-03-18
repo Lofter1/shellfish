@@ -105,7 +105,9 @@
             <!--     Cancel -->
             <!-- </Button> -->
             
-            <Button Grid.Row="7" Grid.Column="1" Command="{Binding OpenAssetCommand}">
+            <Button Grid.Row="7" Grid.Column="1" 
+                    Command="{Binding OpenAssetCommand}"
+                    Width="50" Height="25">
                 Open
             </Button>
         </Grid>

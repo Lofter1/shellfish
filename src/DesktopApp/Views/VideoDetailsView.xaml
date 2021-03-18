@@ -79,7 +79,9 @@
                     Width="50" Height="25">
                 Save
             </Button>
-            <Button Grid.Row="6" Grid.Column="1" Command="{Binding OpenAssetCommand}">
+            <Button Grid.Row="6" Grid.Column="1" 
+                    Command="{Binding OpenAssetCommand}"
+                    Width="50" Height="25">
                 Open
             </Button>
         </Grid>
