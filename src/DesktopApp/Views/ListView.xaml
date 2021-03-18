@@ -1,0 +1,20 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="DesktopApp.Views.ListView">
+
+    <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
+        <Button Classes="AddAsset" Command="{Binding AddAssetCommand}" VerticalAlignment="Top">Add Item</Button>
+        <Button Classes="AddAsset" Command="{Binding OpenAssetCommand}" VerticalAlignment="Top">Open details for selected Item</Button>
+        <ListBox Grid.Column="1" Items="{Binding Assets}" Classes="Assets" SelectedItem="{Binding SelectedAsset}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+
+</UserControl>

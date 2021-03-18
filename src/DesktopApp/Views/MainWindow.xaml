@@ -3,6 +3,7 @@
         xmlns:vm="clr-namespace:DesktopApp.ViewModels;assembly=DesktopApp"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:DesktopApp.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DesktopApp.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -12,101 +13,26 @@
         <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <Window.Styles>
-        <Style Selector="Button.AddAsset">
-            <Setter Property="FontSize" Value="38" />
-            <Setter Property="Width" Value="60" />
-            <Setter Property="Height" Value="60" />
-        </Style>
-        
-        <Style Selector="Button.AssetTile">
-            <Setter Property="FontSize" Value="38" />
-            <Setter Property="Width" Value="60" />
-            <Setter Property="Height" Value="60" />
-        </Style>
-
-        <Style Selector="StackPanel.Collection">
-            <Setter Property="HorizontalAlignment" Value="Left" />
-            <Setter Property="Margin" Value="10" />
-        </Style>
-        
-        <Style Selector="TextBox.Search">
-            <Setter Property="HorizontalAlignment" Value="Right" />
-            <Setter Property="Padding" Value="0, 10, 0, 0" />
-            <Setter Property="Width" Value="200" />
-        </Style>
-        
-        <Style Selector="ListBox.Assets">
-            <Setter Property="Margin" Value="0, 0, 15,0" />
-        </Style>
-    </Window.Styles>
-
     <StackPanel>
         <TabControl Name="MainTabControl">
             <TabItem Header="Books">
-                <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-                    <Button Grid.Column="0" Classes="AddAsset" Command="{Binding AddBookCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Books}" Classes="Assets">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Title}"/>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </Grid>
+                <views:ListView DataContext="{Binding BookListViewModel}"/>
             </TabItem>
   
             <TabItem Header="Podcasts">
-                <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-                    <Button Classes="AddAsset" Command="{Binding AddPodcastCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Podcasts}" Classes="Assets" SelectedItem="{Binding SelectedPodcast}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Title}"/>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                    <Button Command="{Binding OpenPodcastCommand}">Open</Button>
-                </Grid>
+                <views:ListView DataContext="{Binding PodcastListViewModel}"/>
             </TabItem>
             
             <TabItem Header="Slides">
-                <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-                    <Button Classes="AddAsset" Command="{Binding AddSlideCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Slides}" Classes="Assets">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Title}"/>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </Grid>
+                <views:ListView DataContext="{Binding SlideListViewModel}"/>
             </TabItem>
             
             <TabItem Header="Videos">
-                <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-                    <Button Classes="AddAsset" Command="{Binding AddVideoCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Videos}" Classes="Assets">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Title}"/>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </Grid>
+                <views:ListView DataContext="{Binding VideoListViewModel}"/>
             </TabItem>
             
             <TabItem Header="Blogposts">
-                <Grid ColumnDefinitions="2*, 15*" RowDefinitions="Auto" Classes="Collection">
-                    <Button Classes="AddAsset" Command="{Binding AddBlogpostCommand}" VerticalAlignment="Top">+</Button>
-                    <ListBox Grid.Column="1" Items="{Binding Blogposts}" Classes="Assets">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Title}"/>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </Grid>
+                <views:ListView DataContext="{Binding BlogpostListViewModel}"/>
             </TabItem>
         </TabControl>
     </StackPanel>
