@@ -19,8 +19,6 @@ namespace DesktopApp.ViewModels
 
             var bookEditDataContext = new BookDetailsViewModel {Asset = newBook, IsInEditMode = true};
             var bookEditWindow = new BookDetailsView {DataContext = bookEditDataContext};
-         
-            bookEditDataContext.ItemSavedEvent += (sender, book) => Assets.Add(book);
 
             bookEditWindow.Show();
         }

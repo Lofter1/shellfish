@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+using System;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Reactive;
 using DesktopApp.DataAccess;
 using DesktopApp.Models;
@@ -11,7 +13,7 @@ namespace DesktopApp.ViewModels
         public ObservableCollection<T> Assets { get; set; }
         public ReactiveCommand<Unit, Unit> AddAssetCommand => ReactiveCommand.Create(AddAsset);
         public ReactiveCommand<Unit, Unit> OpenAssetDetailsCommand => ReactiveCommand.Create(OpenAssetDetails);
-        
+        public ReactiveCommand<Unit, Unit> OpenAssetCommand => ReactiveCommand.Create(OpenAsset);
         public ReactiveCommand<Unit, Unit> DeleteAssetCommand => ReactiveCommand.Create(DeleteAsset);
 
         public T SelectedAsset { set; get; }
@@ -20,6 +22,19 @@ namespace DesktopApp.ViewModels
         protected abstract void OpenAssetDetails();
         protected abstract void AddAsset();
 
+        private void OpenAsset()
+        {
+            switch (Environment.OSVersion.Platform)
+            {
+                case PlatformID.Win32NT:
+                    Process.Start(SelectedAsset.Url.ToString());
+                    break;
+                case PlatformID.Unix:
+                    Process.Start("xdg-open", SelectedAsset.Url.ToString());
+                    break;
+            }
+        }
+        
         public void DeleteAsset()
         {
             using var dbContext = new ShellFishDbContext();
