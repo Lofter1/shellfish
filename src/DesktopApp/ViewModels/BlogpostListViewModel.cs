@@ -20,8 +20,6 @@ namespace DesktopApp.ViewModels
             var blogpostEditDataContext = new BlogpostDetailsViewModel {Asset = newBlogpost, IsInEditMode = true};
             var blogpostEditWindow = new BlogpostDetailsView {DataContext = blogpostEditDataContext};
 
-            blogpostEditDataContext.ItemSavedEvent += (sender, blogpost) => Assets.Add(blogpost);
-
             blogpostEditWindow.Show();
         }
     }

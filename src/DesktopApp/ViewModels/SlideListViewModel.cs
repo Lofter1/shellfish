@@ -20,8 +20,6 @@ namespace DesktopApp.ViewModels
             var slideEditDataContext = new SlideDetailsViewModel {Asset = newSlide, IsInEditMode = true};
             var slideEditWindow = new SlideDetailsView {DataContext = slideEditDataContext};
 
-            slideEditDataContext.ItemSavedEvent += (sender, slide) => Assets.Add(slide);
-            
             slideEditWindow.Show();
         }
     }
