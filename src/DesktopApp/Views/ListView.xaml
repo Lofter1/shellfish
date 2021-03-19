@@ -12,7 +12,7 @@
             <Button Command="{Binding OpenAssetDetailsCommand}" 
                     VerticalAlignment="Center" HorizontalAlignment="Center">Open details for selected Item</Button>
             <Button Command="{Binding OpenAssetCommand}" 
-                    VerticalAlignment="Center" HorizontalAlignment="Center">Open details for selected Item</Button>
+                    VerticalAlignment="Center" HorizontalAlignment="Center">Open Asset</Button>
             <Button Command="{Binding DeleteAssetCommand }" 
                     VerticalAlignment="Center" HorizontalAlignment="Center">Delete selected Item</Button>
         </StackPanel>
